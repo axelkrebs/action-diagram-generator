@@ -1,0 +1,57 @@
+<html>
+    <head>
+
+	<style>
+	 .original, .translation {
+	     height: 400px;
+
+	     width: 47%;
+	     float: left;
+	     border: 1px solid black;
+	     margin-left: 1%;
+	 }
+	</style>
+    </head>
+    <body>
+	<input class="translateBtn" type="button" value="Traduire"  />
+	<div class="buttons-wrapper"></div>
+	<div class="original">
+	    ---* Titre
+		---*
+		---*lol
+	</div>
+	<div class="translation"></div>
+    </body>
+    <script>
+     window.onload = updateTranslation;
+
+     function updateTranslation()
+     {
+	 var originalPanel = document.querySelector(".original");
+	 var originalText = originalPanel.innerHTML;
+	 var translationPanel = document.querySelector(".translation");
+	 translationPanel.innerHTML = actionDiagramTranslationFrom(originalText);
+     }
+
+     function actionDiagramTranslationFrom(text)
+     {
+	 function repeat(stringToRepeat, nTimes)
+	 {
+	     var stringRepeated = "";
+	     for(var i = 0; i < nTimes; i++)
+	     {
+		 stringRepeated += stringToRepeat;
+	     }
+	     return stringRepeated;
+	 }
+
+	 var unicode_BoxDrawingsLightHorizontal = "&#9472;";
+	 var unicode_Asterisk = "&#8727;"
+	 var replacementString = repeat(unicode_BoxDrawingsLightHorizontal, 3) + unicode_Asterisk;
+	 var regex = "---*";
+	 var diagramText = text.replace(regex, replacementString);
+	 return diagramText;
+
+     }
+    </script>
+</html>
