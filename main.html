@@ -37,9 +37,9 @@
      function updateTranslation()
      {
 	 var originalPanel = document.querySelector(".original > textarea");
-	 var originalText = originalPanel.innerHTML;
+	 var originalText = originalPanel.value;
 	 var translationPanel = document.querySelector(".translation > textarea");
-	 translationPanel.innerHTML = actionDiagramTranslationFrom(originalText);
+	 translationPanel.value = actionDiagramTranslationFrom(originalText);
      }
 
      function actionDiagramTranslationFrom(text)
