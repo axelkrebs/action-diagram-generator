@@ -32,9 +32,9 @@
 
      function updateTranslation()
      {
-	 var originalPanel = document.querySelector(".original");
+	 var originalPanel = document.querySelector(".original > textarea");
 	 var originalText = originalPanel.innerHTML;
-	 var translationPanel = document.querySelector(".translation");
+	 var translationPanel = document.querySelector(".translation > textarea");
 	 translationPanel.innerHTML = actionDiagramTranslationFrom(originalText);
      }
 
