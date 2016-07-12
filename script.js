@@ -20,8 +20,8 @@
 	     return stringRepeated;
 	 }
 
-	 var unicode_BoxDrawingsLightHorizontal = "&#9472;";
-	 var unicode_Asterisk = "&#8727;"
+	 var unicode_BoxDrawingsLightHorizontal = String.fromCharCode(9472);
+	 var unicode_Asterisk = String.fromCharCode(8727);
 	 var replacementString = repeat(unicode_BoxDrawingsLightHorizontal, 3) + unicode_Asterisk;
 	 var regex = "---*";
 	 var diagramText = text.replace(regex, replacementString);
