@@ -1,0 +1,70 @@
+﻿#####
+#  Version 0.9.2
+#  06/10/2010
+#####
+
+- ADD	Coloration de Ouvrir, Fermer, Ecrire, Lire
+
+#####
+#  Version 0.9.1
+#  05/05/10
+#####
+
+- MOD	Modification du caractère de fin de while
+
+#####
+#  Version 0.9
+#  05/05/10
+#####
+
+- ADD	Sauvegarde automatique toutes les 5 secondes
+
+#####
+#  Version 0.8
+#  28/04/10
+#####
+
+- ADD	Le bouton "Traduire" utilise AJAX (gain en vitesse)
+- ADD	Ajout du bouton "Enregistrer" qui remplace le bouton "Traduire". Celui-ci ne fait plus que traduire
+- ADD	Bouton "Exporter" qui permet de télécharger différentes versions du DA 
+	(Source format texte, rendu final format texte et html)
+- MOD	Retouche du design
+
+#####
+#  Version 0.7.5
+#  28/04/10
+#####
+
+- FIX	Coloration des guillemets
+- FIX	Plus de bug avec les accents
+
+#####
+#  Version 0.7
+#  28/04/10
+#####
+
+- MOD	Modification de la coloration (support du copier/coller sous Word)
+- MOD	La coloration du AND/OR ne se fait que dans les "if" et les "while"
+- MOD	Les mots "Liberer", "Sortir" et "Obtenir" ne se colorent que s'ils sont en début de ligne
+
+#####
+#  Version 0.6
+#  20/04/10
+#####
+
+- ADD	Ajout de la coloration des ''
+- ADD	Support des [...]ENT (coloration et mise en indice)
+
+#####
+#  Version 0.5
+#  12/04/10
+#####
+
+- ADD	Ajout de l'enregistrement sur le serveur + ouverture du fichier
+- ADD	Coloration des guillemets
+- ADD	Coloration des mots clés
+- ADD	Coloration des titres
+- MOD	Nettoyage du code source
+- MOD	Mise à jour du code d'exemple
+- FIX	Coloration correct des commentaires
+- FIX	Bug dans le téléchargement de fichier avec le saut de ligne
