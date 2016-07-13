@@ -41,28 +41,32 @@
 	     console.log(iLine);
 	     console.log(lines[iLine]);
 	     var originalLine = lines[iLine].toString();
-	     var translationLine = "";
+
+	     /* Create nested module and if/els blocks side borders */ 
+	     var blocksBorderDrawings = "";
 	     if(startLineBlocksBorderChars.length > 0)
 	     {
-		 translationLine  = startLineBlocksBorderChars.join(" ");
+		 blocksBorderDrawings  = startLineBlocksBorderChars.join("");
 
 	     }
-	     
+
+	     /* Translate original module an if/else headings */
 	     var regexStringMatchingOriginalModuleHeading = ORIGINAL_MODULE_HEADING;
 	     var regex = new RegExp(regexStringMatchingOriginalModuleHeading);
 	     console.log(regexStringMatchingOriginalModuleHeading);
-	     
+	     var rawTranslatedLineText;	     
 	     if(originalLine.match(regex))
 	     {
-		  translationLine = originalLine.replace(ORIGINAL_MODULE_HEADING, TRANSLATION_MODULE_HEADING);
+		  rawTranslatedLineText = originalLine.replace(ORIGINAL_MODULE_HEADING, TRANSLATION_MODULE_HEADING);
 		 startLineBlocksBorderChars.push(unicode_BOX_DRAWINGS_LIGHT_VERTICAL);
 	     }
 	     else
 	     {
-		 translationLine = translationLine.concat(originalLine);
+		 rawTranslatedLineText = originalLine;
 	     }
-	     console.log(translationLine);
-	     translationLines[iLine] = translationLine;
+	     
+	     console.log(rawTranslatedLineText);
+	     translationLines[iLine] = blocksBorderDrawings + rawTranslatedLineText;
 
 	 }
 	 
