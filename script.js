@@ -21,16 +21,16 @@
 	     return stringRepeated;
 	 }
 	 
-	 var unicode_BoxDrawingsLightHorizontal = String.fromCharCode(9472);
-	 var unicode_Asterisk = String.fromCharCode(42);
+	 const unicode_BoxDrawingsLightHorizontal = String.fromCharCode(9472);
+	 const unicode_Asterisk = String.fromCharCode(42);
 	 
-	 var unicode_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT = String.fromCharCode(9484);
+	 const unicode_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT = String.fromCharCode(9484);
 	 var TRANSLATION_MODULE_HEADING = unicode_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT + repeat(unicode_BoxDrawingsLightHorizontal, 3) + unicode_Asterisk;
-	 var unicode_Dash = String.fromCharCode(45);
+	 const unicode_Dash = String.fromCharCode(45);
 	 var ORIGINAL_MODULE_HEADING = repeat(unicode_Dash, 3) + unicode_Asterisk;
 	 console.log(TRANSLATION_MODULE_HEADING, ORIGINAL_MODULE_HEADING);
 
-	 var unicode_BOX_DRAWINGS_LIGHT_VERTICAL = String.fromCharCode(9474);
+	 const unicode_BOX_DRAWINGS_LIGHT_VERTICAL = String.fromCharCode(9474);
 	 var lines = text.split("\n");
 	 var startLineBlocksBorderChars = [];
 	 var translationLines = new Array(lines.length);
