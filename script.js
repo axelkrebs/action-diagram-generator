@@ -1,4 +1,6 @@
-     window.onload = updateTranslation;
+// make objects originalModule and translationModule
+// each have properties : heading, footer, border which returns the corresponding formatting strings
+window.onload = updateTranslation;
 
      function updateTranslation()
      {
@@ -8,10 +10,7 @@
 	 translationPanel.value = actionDiagramTranslationFrom(originalText);
      }
 
-     function actionDiagramTranslationFrom(text)
-{
-
-	 function repeat(stringToRepeat, nTimes)
+function repeat(stringToRepeat, nTimes)
 	 {
 	     var stringRepeated = "";
 	     for(var i = 0; i < nTimes; i++)
@@ -21,16 +20,25 @@
 	     return stringRepeated;
 	 }
 	 
-	 const unicode_BoxDrawingsLightHorizontal = String.fromCharCode(9472);
-	 const unicode_Asterisk = String.fromCharCode(42);
-	 
-	 const unicode_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT = String.fromCharCode(9484);
-	 var TRANSLATION_MODULE_HEADING = unicode_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT + repeat(unicode_BoxDrawingsLightHorizontal, 3) + unicode_Asterisk;
+     function actionDiagramTranslationFrom(text)
+{
+	 //Original shared characters
 	 const unicode_Dash = String.fromCharCode(45);
-	 var ORIGINAL_MODULE_HEADING = repeat(unicode_Dash, 3) + unicode_Asterisk;
-	 console.log(TRANSLATION_MODULE_HEADING, ORIGINAL_MODULE_HEADING);
+	 const unicode_Asterisk = String.fromCharCode(42);
 
+
+	 // Translation shared characters
 	 const unicode_BOX_DRAWINGS_LIGHT_VERTICAL = String.fromCharCode(9474);
+	 const unicode_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT = String.fromCharCode(9484);
+	 const unicode_BoxDrawingsLightHorizontal = String.fromCharCode(9472);
+
+	 //Original module
+	 var ORIGINAL_MODULE_HEADING = repeat(unicode_Dash, 3) + unicode_Asterisk;
+	 
+	 // Translation module
+	 var TRANSLATION_MODULE_HEADING = unicode_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT + repeat(unicode_BoxDrawingsLightHorizontal, 3) + unicode_Asterisk;
+
+
 	 var lines = text.split("\n");
 	 var startLineBlocksBorderChars = [];
 	 var translationLines = new Array(lines.length);
