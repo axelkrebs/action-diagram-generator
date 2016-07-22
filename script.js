@@ -56,7 +56,8 @@ function actionDiagramTranslationFrom(text)
 
     }
     var rawTranslatedLineText = originalLine.slice(0);
-
+    var regexParenthesedGroup_remainingTextOnLine = "";
+    var replacementString = "";
     
     /* Translate module heading */
     // Original module heading
@@ -68,8 +69,8 @@ function actionDiagramTranslationFrom(text)
 
     if(regexMatchingOriginalModuleHeading.test(originalLine))
     {
-      var regexParenthesedGroup_remainingTextOnLine = "$1";
-      var replacementString = TRANSLATION_MODULE_HEADING + regexParenthesedGroup_remainingTextOnLine;
+      regexParenthesedGroup_remainingTextOnLine = "$1";
+      replacementString = TRANSLATION_MODULE_HEADING + regexParenthesedGroup_remainingTextOnLine;
       rawTranslatedLineText = originalLine.replace(regexMatchingOriginalModuleHeading, replacementString);
       startLineBlocksBorderChars.push(unicode_BOX_DRAWINGS_LIGHT_VERTICAL);
     }
@@ -78,28 +79,30 @@ function actionDiagramTranslationFrom(text)
 
     /* Translate if */
     var TRANSLATION_IF_HEADING = unicode_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT + repeat(unicode_BoxDrawingsLightHorizontal, 2);
-    var regexStringMatchingOriginalIfHeading = "\\s*" + "(?:if){1}" + "(.*)$"; 
-    var regexMatchingOriginalIfHeading = new RegExp(regexStringMatchingOriginalIfHeading, "i");
+    var regexStringMatchingOriginalIfHeading = "^\\s*" + "(?:[iI][fF]){1}" + "(.*)$"; 
+    var regexMatchingOriginalIfHeading = new RegExp(regexStringMatchingOriginalIfHeading, "");
     if(regexMatchingOriginalIfHeading.test(originalLine))
     {
-      var regexParenthesedGroup_remainingTextOnLine = "$1";
-      var replacementString = TRANSLATION_IF_HEADING + " if" + regexParenthesedGroup_remainingTextOnLine;
+      regexParenthesedGroup_remainingTextOnLine = "$1";
+      replacementString = TRANSLATION_IF_HEADING + " if" + regexParenthesedGroup_remainingTextOnLine;
       rawTranslatedLineText = originalLine.replace(regexMatchingOriginalIfHeading, replacementString);
       startLineBlocksBorderChars.push(unicode_BOX_DRAWINGS_LIGHT_VERTICAL);
     }
-    // Original else
-    var ORIGINAL_ELSE_HEADING = "else";
 
+
+    
     //Translation else
     var unicode_BOX_DRAWINGS_LIGHT_VERTICAL_AND_RIGHT = String.fromCharCode(9500);
     var TRANSLATION_ELSE_HEADING = unicode_BOX_DRAWINGS_LIGHT_VERTICAL_AND_RIGHT + repeat(unicode_BoxDrawingsLightHorizontal, 2);
-
-    var regexElse = new RegExp("^\\s*" + ORIGINAL_ELSE_HEADING);
-    if(regexElse.test(originalLine))
+    var regexStringMatchingOriginalElseHeading = "^\\s*(?:else){1}(.*)$";
+    var regexMatchingOriginalElseHeading = new RegExp(regexStringMatchingOriginalElseHeading,"");
+    if(regexMatchingOriginalElseHeading.test(originalLine))
     {
       var blocksBorderDrawingsWithoutMatchingIfBorderLineChar =  blocksBorderDrawings.slice(0, -1);
       blocksBorderDrawings = blocksBorderDrawingsWithoutMatchingIfBorderLineChar;
-      rawTranslatedLineText = TRANSLATION_ELSE_HEADING.concat(originalLine);
+      regexParenthesedGroup_remainingTextOnLine = "$1";
+      replacementString = TRANSLATION_ELSE_HEADING + " else" + regexParenthesedGroup_remainingTextOnLine;
+      rawTranslatedLineText = originalLine.replace(regexMatchingOriginalElseHeading, replacementString);
     }    
 
 
