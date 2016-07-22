@@ -35,15 +35,6 @@ function actionDiagramTranslationFrom(text)
   const unicode_BoxDrawingsLightHorizontal = String.fromCharCode(9472);
 
   
-  // Original if
-  var ORIGINAL_IF_HEADING = "if";
-  // Original else
-  var ORIGINAL_ELSE_HEADING = "else";
-  //Translation if
-  var TRANSLATION_IF_HEADING = unicode_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT + repeat(unicode_BoxDrawingsLightHorizontal, 2);
-  //Translation else
-  var unicode_BOX_DRAWINGS_LIGHT_VERTICAL_AND_RIGHT = String.fromCharCode(9500);
-  var TRANSLATION_ELSE_HEADING = unicode_BOX_DRAWINGS_LIGHT_VERTICAL_AND_RIGHT + repeat(unicode_BoxDrawingsLightHorizontal, 2);
   
   
   
@@ -85,16 +76,24 @@ function actionDiagramTranslationFrom(text)
 
     
 
-    /* Translate if/else*/
-    
-    var regexIf = new RegExp("^\\s*" + ORIGINAL_IF_HEADING);
-    if(regexIf.test(originalLine))
+    /* Translate if */
+    var TRANSLATION_IF_HEADING = unicode_BOX_DRAWINGS_LIGHT_DOWN_AND_RIGHT + repeat(unicode_BoxDrawingsLightHorizontal, 2);
+    var regexStringMatchingOriginalIfHeading = "\\s*" + "(?:if){1}" + "(.*)$"; 
+    var regexMatchingOriginalIfHeading = new RegExp(regexStringMatchingOriginalIfHeading, "i");
+    if(regexMatchingOriginalIfHeading.test(originalLine))
     {
-      
-      var lineContentWithRemovedLeadingSpaces = originalLine.replace(/^\s*/g,"");
-      rawTranslatedLineText = TRANSLATION_IF_HEADING + lineContentWithRemovedLeadingSpaces;
+      var regexParenthesedGroup_remainingTextOnLine = "$1";
+      var replacementString = TRANSLATION_IF_HEADING + " if" + regexParenthesedGroup_remainingTextOnLine;
+      rawTranslatedLineText = originalLine.replace(regexMatchingOriginalIfHeading, replacementString);
       startLineBlocksBorderChars.push(unicode_BOX_DRAWINGS_LIGHT_VERTICAL);
     }
+    // Original else
+    var ORIGINAL_ELSE_HEADING = "else";
+
+    //Translation else
+    var unicode_BOX_DRAWINGS_LIGHT_VERTICAL_AND_RIGHT = String.fromCharCode(9500);
+    var TRANSLATION_ELSE_HEADING = unicode_BOX_DRAWINGS_LIGHT_VERTICAL_AND_RIGHT + repeat(unicode_BoxDrawingsLightHorizontal, 2);
+
     var regexElse = new RegExp("^\\s*" + ORIGINAL_ELSE_HEADING);
     if(regexElse.test(originalLine))
     {
