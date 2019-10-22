@@ -1,5 +1,5 @@
 * Disclaimer
-- I made this project when I was learning Javascript, it's riddled with beginner errors and the UI is bare & simple html/css.
+I made this project when I was learning Javascript, it's riddled with beginner errors and the UI is bare basic html/css.
 
 * Action diagram generator
 - Translate pseudo code to action diagrams.
