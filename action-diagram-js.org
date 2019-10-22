@@ -1,0 +1,35 @@
+* TODO Next important tasks
+** TODO Read speaking javascript
+   1) [ ] Read part 1
+   2) [ ] Make a small project 
+      + [ ] quotes generator
+      + [ ] todo-list
+      + [ ] pomodoro clock
+      + [ ] calculator
+** TODO Create unit test with mocha
+*** TODO familiarize myself with mocha
+    1) [ ] Decipher example test
+    2) [ ] Write a small function test of my own
+      
+*** TODO refactor code in functions
+    1) [ ] read and understand marked.js
+    2) [ ] refactor code to make it look similar to marked.js
+
+* TODO Remaining work
+** TODO Features
+*** TODO Translator [/]
+**** TODO Module heading [0/1]
+- [ ] module heading closing token
+
+**** TODO If/else block [0/1]
+- [ ] closing token
+
+**** TODO Do loop [0/3] 
+- [ ] loop heading
+- [ ] body line
+- [ ] footer
+
+
+*** TODO Import/Export to files
+*** TODO Library
+ 
