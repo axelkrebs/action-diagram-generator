@@ -3,24 +3,6 @@
 - Translate pseudo code to action diagrams.
 - Currently only supports French.
 
-
-* TODO Next important tasks
-** TODO Read speaking javascript
-   1) [ ] Read part 1
-   2) [ ] Make a small project 
-      + [ ] quotes generator
-      + [ ] todo-list
-      + [ ] pomodoro clock
-      + [ ] calculator
-** TODO Create unit test with mocha
-*** TODO familiarize myself with mocha
-    1) [ ] Decipher example test
-    2) [ ] Write a small function test of my own
-      
-*** TODO refactor code in functions
-    1) [ ] read and understand marked.js
-    2) [ ] refactor code to make it look similar to marked.js
-
 * TODO Remaining tasks
 ** TODO Features
 *** TODO Translator [/]
