@@ -1,6 +1,7 @@
 // make objects originalModule and translationModule
 // each have properties : heading, footer, border which returns the corresponding formatting strings
 window.onload = updateTranslation;
+document.getElementById("translateBtn").onclick = updateTranslation;
 
 function updateTranslation()
 {
