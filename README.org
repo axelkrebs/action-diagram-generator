@@ -1,3 +1,7 @@
+* Action diagram generator
+Translate pseudo code to action diagrams.
+Currently only supports French.
+
 * TODO Next important tasks
 ** TODO Read speaking javascript
    1) [ ] Read part 1
@@ -15,7 +19,7 @@
     1) [ ] read and understand marked.js
     2) [ ] refactor code to make it look similar to marked.js
 
-* TODO Remaining work
+* TODO Remaining tasks
 ** TODO Features
 *** TODO Translator [/]
 **** TODO Module heading [0/1]
