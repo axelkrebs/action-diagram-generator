@@ -1,7 +1,8 @@
 * Action diagram generator
-Disclaimer: I made this project when I was learning Javascript/HTML/CSS, it's riddled with beginner errors.
-Translate pseudo code to action diagrams.
-Currently only supports French.
+- Disclaimer: I made this project when I was learning Javascript/HTML/CSS, it's riddled with beginner errors.
+- Translate pseudo code to action diagrams.
+- Currently only supports French.
+
 
 * TODO Next important tasks
 ** TODO Read speaking javascript
