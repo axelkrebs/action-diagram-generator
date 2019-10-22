@@ -5,6 +5,9 @@ I made this project when I was learning Javascript, it's riddled with beginner e
 - Translate pseudo code to action diagrams.
 - Currently only supports French.
 
+* Action diagram syntax
+See the [[https://github.com/axelkrebs/action-diagram-generator/blob/master/syntaxe.pdf][syntax reference]]
+
 * TODO Remaining tasks
 ** TODO Features
 *** TODO Translator [/]
